@@ -10,7 +10,9 @@ The theme styles every part of Typora's editor — not just the document body, b
 
 ## Screenshots
 
-## ![Screenshot 2026-05-06 at 6.09.47 PM](/Users/manu/Documents/inbox/Screenshot 2026-05-06 at 6.09.47 PM.png)Features
+![Screenshot 2026-05-06 at 6.09.47 PM](/Users/manu/Documents/inbox/Screenshot 2026-05-06 at 6.09.47 PM.png)
+
+## Features
 
 - **Dark theme only**
 - **Calm color palette** that draws inspiration from dusk.
@@ -29,6 +31,7 @@ The theme styles every part of Typora's editor — not just the document body, b
 3. (Optional) If you want the recommended fonts, install:
    - [Young Serif](https://fonts.google.com/specimen/Young+Serif)
    - [Satoshi](https://www.fontshare.com/fonts/satoshi)
+   
    The theme falls back gracefully if these aren't installed.
 4. Restart Typora.
 5. Select **Themes → Sweet Sweet**.
