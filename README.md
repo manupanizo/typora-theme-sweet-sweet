@@ -2,8 +2,6 @@
 
 A dark theme for [Typora](https://typora.io) — built for simplicity and calm long-form writing.
 
-<!-- TODO: add a hero screenshot -->
-
 ## Overview
 
 Sweet Sweet is a dark Typora theme with a soft, slightly muted palette: warm yellow accents, dusty pink borders, and sage green for callouts and code highlights. It uses **Young Serif** for headings and **Satoshi** for body text, paired with a monospace stack for code.
@@ -12,12 +10,7 @@ The theme styles every part of Typora's editor — not just the document body, b
 
 ## Screenshots
 
-<!-- TODO: replace with real screenshots -->
-| Editor | Code & callouts | Find / Replace |
-|---|---|---|
-| ![Editor](screenshots/editor.png) | ![Code](screenshots/code.png) | ![Find](screenshots/find.png) |
-
-## Features
+## ![Screenshot 2026-05-06 at 6.09.47 PM](/Users/manu/Documents/inbox/Screenshot 2026-05-06 at 6.09.47 PM.png)Features
 
 - **Dark theme only**
 - **Calm color palette** that draws inspiration from dusk.
