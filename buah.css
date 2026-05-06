@@ -1,0 +1,1201 @@
+/*
+* ----------------------------------------------------------------
+ * Buah
+ * A dark theme for simplicity
+ * Author: Manu Panizo
+ * License: Apache-2.0
+ * Designed and tested on macOS. Not tested, but should work for Windows/Linux. This theme does not include styles for Windows “unibody” style.
+ * ----------------------------------------------------------------
+*/
+:root {
+  /* ==================== Color Palette ==================== */
+  /* Primary colors */
+  --buah-light: #ebebf4;
+  --buah-dim: #bcbce3;
+  --buah-dark: #313647;
+  --buah-accent: #fff8d4;
+  
+  /* Complementary colors */
+  --buah-pink: #d9c5ca;
+  --buah-green: #a3b087;
+  
+  /* Secondary color palette */
+  --buah-bg-medium: #434A60;
+  --buah-gray-1: #859289;
+  --buah-gray-2: #9da9a0;
+
+  /* Background variations */
+  --buah-bg-variation: #314742;
+  --buah-bg-dim: #2a2f3f;
+  --buah-bg-0: var(--buah-dark);
+  --buah-bg-1: var(--buah-bg-medium);
+  --buah-bg-2: #4d5f6f;
+  --buah-bg-3: #57687a;
+  --buah-bg-4: #617185;
+
+  /* UI */
+  --bg: var(--buah-dark);
+  --bg-panel: var(--buah-bg-medium);
+  --bg-soft: #4d5f6f;
+  --bg-muted: #57687a;
+  --text: var(--buah-light);
+  --text-heading: var(--buah-dim);
+  --text-muted: var(--buah-dim);
+  --border: var(--buah-light);
+  --accent: var(--buah-accent);
+  --accent-2: var(--buah-green);
+  --selection: rgba(163, 176, 135, 0.3);
+
+  /* Typora UI Variables */
+  --bg-color: var(--bg);
+  --text-color: var(--text);
+  --md-char-color: var(--buah-gray-1);
+  --meta-content-color: var(--buah-gray-2);
+  
+  --primary-color: var(--buah-green);
+  --primary-btn-border-color: var(--buah-bg-4);
+  --primary-btn-text-color: var(--buah-dark);
+  
+  --window-border: 1px solid var(--border);
+  --active-file-bg-color: var(--bg-muted);
+  --active-file-text-color: var(--text);
+  --active-file-border-color: var(--accent);
+  
+  --side-bar-bg-color: var(--bg-panel);
+  --item-hover-bg-color: var(--bg-soft);
+  --item-hover-text-color: var(--text);
+  
+  --monospace: ui-monospace, "JetBrains Mono", "Zed Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Callout template color mapping */
+  --color-1: var(--buah-green);
+  --color-1-0-b: rgba(163, 176, 135, 0.12);
+
+  --color-2: var(--buah-accent);
+  --color-2-0-b: rgba(255, 248, 212, 0.14);
+
+  --color-3: #8fa5b8;
+  --color-3-0-b: rgba(143, 165, 184, 0.12);
+
+  --color-4: #b8a5c7;
+  --color-4-0-b: rgba(184, 165, 199, 0.14);
+
+  --color-5: #c7b5a5;
+  --color-5-0-b: rgba(199, 181, 165, 0.14);
+
+  /* Typography */
+  --font-heading: "Young Serif", "Satoshi", "Work Sans Light", "Work Sans", "Lato Light", "Lato", sans-serif;
+  --font-body: "Satoshi", "Work Sans Light", "Work Sans", "Lato Light", "Lato", sans-serif;
+  --font-code: ui-monospace, "JetBrains Mono", "Zed Plex Mono", "SFMono-Regular",
+    Menlo, Consolas, monospace;
+  --font-size: 22px;
+  --line-height: 1.65;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 10px 24px rgba(0, 0, 0, 0.35);
+  --gap-1: 0.5rem;
+  --gap-2: 0.75rem;
+  --gap-3: 1rem;
+  --gap-4: 1.5rem;
+}
+
+
+body,
+.typora-export {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: 400;
+}
+
+
+#write {
+  max-width: 840px;
+  margin: 2.2rem auto;
+  padding: 0 var(--gap-3);
+}
+
+
+::selection {
+  background: var(--selection);
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--buah-bg-4);
+  border-radius: 20px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* Headings */
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.25;
+  margin: 2.2rem 0 1rem;
+}
+
+#write h1 {
+  font-size: 3.5rem;
+  color: var(--buah-dim);
+}
+
+#write h2 {
+  font-size: 2.5rem;
+  padding-bottom: 0.35rem;
+  color: var(--buah-dim);
+}
+
+#write h3 {
+  font-size: 2.0rem;
+  padding-bottom: 0.25rem;
+}
+
+#write h4 {
+  font-size: 1.5rem;
+}
+
+#write h5 {
+  font-size: 1.25rem;
+}
+
+#write h6 {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+
+/* Paragraph / Lists */
+#write p {
+  margin: 0 0 1.05rem;
+}
+
+#write strong,
+#write b {
+  color: var(--buah-accent);
+  font-weight: 600;
+}
+
+#write em { color: var(--buah-accent); font-style: italic; }
+
+#write del {
+  color: var(--text-muted);
+}
+
+#write ul,
+#write ol {
+  margin: 0 0 1rem 1.5rem;
+}
+
+#write li {
+  margin: 0.3rem 0;
+}
+
+#write li > p {
+  margin: 0.2rem 0;
+}
+
+
+
+/* Links */
+#write a {
+  color: var(--buah-accent);
+  text-decoration: none;
+}
+
+#write a:hover {
+  text-decoration: underline;
+}
+
+
+/* Blockquote (standard) */
+#write blockquote {
+  margin: 1.25rem 0;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid var(--buah-accent);
+  background: var(--buah-bg-1);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+}
+
+
+/* Tables */
+#write table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1.2rem 0;
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#write th,
+#write td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--buah-bg-3);
+}
+
+#write thead th {
+  background: var(--buah-bg-medium);
+  color: var(--text);
+  text-align: left;
+}
+
+#write tbody tr:hover {
+  background: var(--buah-bg-variation);
+}
+
+/* All body rows use dark background */
+#write tbody tr {
+  background: var(--buah-dark);
+}
+
+/* Highlight styling for ==text== syntax */
+#write mark,
+#write mark:hover,
+#write mark:focus,
+#write mark:active,
+#write .md-highlight,
+#write .md-highlight:hover,
+#write .md-highlight:focus,
+#write .md-highlight:active,
+#write mark *,
+#write mark *:hover,
+#write mark *:focus,
+#write mark *:active {
+  background: var(--buah-pink) !important;
+  background-color: var(--buah-pink) !important;
+  color: var(--buah-dark) !important;
+}
+
+/* Inline code */
+#write code,
+#write tt {
+  font-family: var(--font-code);
+  font-size: 0.76em;
+  font-weight: 500;
+  background: var(--bg-panel);
+  color: var(--text);
+  border: 1px solid var(--buah-pink);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+}
+
+#write code:hover,
+#write tt:hover,
+#write span.cm-string:hover,
+#write span.cm-atom:hover,
+#write span:hover,
+.CodeMirror-code span:hover {
+  background: transparent !important;
+}
+
+/* Override any white background on hover */
+#write *:hover,
+.CodeMirror-code *:hover {
+  background-color: transparent !important;
+}
+
+/* HTML block indicator styling */
+.md-htmlblock-container,
+.md-rawblock-container {
+  background: var(--bg) !important;
+  color: var(--text-muted) !important;
+}
+
+.md-htmlblock-container:hover,
+.md-rawblock-container:hover {
+  background: var(--bg) !important;
+  color: var(--text-muted) !important;
+}
+
+/* Prevent HTML block hover from changing content background */
+#write .md-htmlblock-container:hover,
+#write .md-rawblock-container:hover {
+  background: transparent !important;
+}
+
+/* HTML block tooltip indicator - remove white hover background */
+html body .md-rawblock-tooltip.md-rawblock-control,
+html body .md-rawblock-tooltip.md-rawblock-control:hover,
+html body .md-rawblock:hover .md-rawblock-tooltip.md-rawblock-control,
+html body .md-htmlblock:hover .md-rawblock-tooltip.md-rawblock-control,
+html body #write .md-rawblock:hover .md-rawblock-tooltip.md-rawblock-control,
+html body #write .md-htmlblock:hover .md-rawblock-tooltip.md-rawblock-control,
+html body #write .md-rawblock-container:hover .md-rawblock-tooltip.md-rawblock-control,
+html body #write .md-htmlblock-container:hover .md-rawblock-tooltip.md-rawblock-control,
+.md-rawblock-tooltip,
+.md-rawblock-tooltip:hover,
+.md-rawblock:hover .md-rawblock-tooltip,
+.md-htmlblock:hover .md-rawblock-tooltip,
+.md-rawblock-container:hover .md-rawblock-tooltip,
+.md-htmlblock-container:hover .md-rawblock-tooltip,
+.md-rawblock .md-rawblock-tooltip,
+.md-htmlblock .md-rawblock-tooltip {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
+
+/* Code fences */
+#write pre.md-fences {
+  background: var(--bg-panel);
+  border: 1px solid var(--buah-pink);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow: auto;
+  box-shadow: var(--shadow-1);
+  font-size: 0.76em;
+}
+
+
+/* ==================== CodeMirror — Buah token colors ==================== */
+.cm-s-inner,
+.cm-s-typora-default {
+  background: transparent;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cm-s-inner .cm-comment {
+  color: var(--buah-gray-1);
+  font-style: italic;
+}
+
+.cm-s-inner .cm-keyword {
+  color: var(--buah-accent);
+  font-weight: 600;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-number {
+  color: var(--buah-accent);
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-variable {
+  color: var(--text);
+}
+
+.cm-s-inner .cm-variable-2 {
+  color: #8fa5b8;
+}
+
+.cm-s-inner .cm-variable-3 {
+  color: var(--buah-accent);
+}
+
+.cm-s-inner .cm-string {
+  color: var(--buah-accent);
+}
+
+.cm-s-inner .cm-property {
+  color: #8fa5b8;
+}
+
+.cm-s-inner .cm-operator {
+  color: var(--text);
+}
+
+.cm-s-inner .cm-tag {
+  color: var(--buah-green);
+}
+
+.cm-s-inner .cm-attribute {
+  color: var(--buah-accent);
+}
+
+.cm-s-inner .cm-meta {
+  color: var(--buah-gray-1);
+}
+
+.cm-s-inner .cm-builtin {
+  color: var(--buah-green);
+}
+
+.cm-s-inner .cm-quote {
+  color: var(--buah-accent);
+}
+
+.cm-s-inner .cm-hr {
+  color: var(--buah-gray-1);
+}
+
+.cm-s-inner .cm-link {
+  color: #8fa5b8;
+  text-decoration: underline;
+}
+
+.cm-s-inner .cm-error {
+  color: #1a0d0d;
+  background: var(--buah-green);
+}
+
+
+/* ===================================================================
+   CALL OUTS — Using provided template & Buah palette variables
+   =================================================================== */
+blockquote,
+.md-alert {
+  margin: 14px 0;
+  padding: 16px;
+  background: var(--color-2-0-b);
+  box-sizing: border-box;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-2);
+  border-right: 0.1px solid transparent;
+  border-bottom: 0.1px solid transparent;
+  border-top: 0.1px solid transparent;
+}
+
+blockquote blockquote {
+  background: var(--color-1-0-b);
+}
+
+blockquote > blockquote,
+blockquote > .md-alert,
+.md-alert > .md-alert,
+.md-alert > blockquote {
+  margin-bottom: 0;
+}
+
+p + blockquote,
+p + .md-alert {
+  margin-top: -8px;
+}
+
+.md-alert.md-alert-note > *:first-child,
+.md-alert.md-alert-caution > *:first-child,
+.md-alert.md-alert-tip > *:first-child,
+.md-alert.md-alert-important > *:first-child,
+.md-alert.md-alert-warning > *:first-child {
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: -4px;
+}
+
+.md-alert.md-alert-note > *:last-child,
+.md-alert.md-alert-caution > *:last-child,
+.md-alert.md-alert-tip > *:last-child,
+.md-alert.md-alert-important > *:last-child,
+.md-alert.md-alert-warning > *:last-child {
+  margin-bottom: 0;
+}
+
+.md-alert.md-alert-note {
+  border-left-color: var(--color-1);
+  background: var(--color-1-0-b);
+  color: var(--color-1);
+}
+
+.md-alert.md-alert-note .md-alert-text-note { color: var(--color-1); }
+
+.md-alert.md-alert-caution {
+  border-left-color: var(--color-2);
+  background: var(--color-2-0-b);
+  color: var(--color-2);
+}
+
+.md-alert.md-alert-caution .md-alert-text-caution { color: var(--color-2); }
+
+.md-alert.md-alert-tip {
+  border-left-color: var(--color-3);
+  background: var(--color-3-0-b);
+  color: var(--color-3);
+}
+
+.md-alert.md-alert-tip .md-alert-text-tip { color: var(--color-3); }
+
+.md-alert.md-alert-important {
+  border-left-color: var(--color-4);
+  background: var(--color-4-0-b);
+  color: var(--color-4);
+}
+
+.md-alert.md-alert-important .md-alert-text-important { color: var(--color-4); }
+
+.md-alert.md-alert-warning {
+  border-left-color: var(--color-5);
+  background: var(--color-5-0-b);
+  color: var(--color-5);
+}
+
+.md-alert.md-alert-warning .md-alert-text-warning { color: var(--color-5); }
+
+
+/* TOC */
+.md-toc {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.8rem;
+}
+
+.md-toc-item:hover {
+  background: var(--buah-bg-2);
+}
+
+/* Images */
+#write img {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-2);
+}
+
+#write figcaption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ==================== Bullet points ==================== */
+
+/* Remove default bullets */
+#write ul {
+  list-style-type: none;
+  padding-left: 0.75em;
+}
+
+#write ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+/* Level 1: Plus sign */
+#write ul > li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: 'mayo', monospace;
+  color: var(--buah-dim);
+  font-size: 1.1em;
+  line-height: inherit;
+}
+
+/* Level 2: Hyphen-minus */
+#write ul > li > ul > li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: 'mayo', monospace;
+  color: var(--buah-dim);
+
+}
+
+/* Level 3: Plus sign */
+#write ul > li > ul > li > ul > li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: 'mayo', monospace;
+  color: var(--buah-dim);
+}
+
+/* Level 4+: Hyphen-minus */
+#write ul > li > ul > li > ul > li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-family: 'mayo', monospace;
+  color: var(--buah-dim);
+}
+
+/* Remove custom bullets from task list items - they already have checkboxes */
+#write li.task-list-item::before,
+#write li.md-task-list-item::before {
+  content: none !important;
+  display: none;
+}
+
+/* ==================== Checkboxes & Task Lists ==================== */
+
+/* Task list item container */
+#write li.task-list-item {
+    list-style-type: none;
+    position: relative;
+    padding-left: 0;
+}
+
+/* Keep paragraph text inline with checkbox */
+#write li.task-list-item > p {
+    display: inline;
+}
+
+/* Checkbox base — unchecked default state */
+#write li.task-list-item > input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    width: 1.1em;
+    height: 1.1em;
+    border: 2px solid var(--buah-dim);
+    border-radius: 50%;
+    background-color: transparent;
+    /* Solid-color gradient used as a mask for the blind animation */
+    background-image: linear-gradient(to bottom, var(--buah-dim), var(--buah-dim));
+    background-size: 100% 0%;       /* 0% height = empty */
+    background-position: top;        /* Anchored at top for blind-down fill */
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -1.39em;
+    top: 0.25em;                     /* Center with first line of text */
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    transition: background-size 0.5s ease, border-color 0.2s ease;
+}
+
+/* Unchecked — hover & focus */
+#write li.task-list-item > input[type="checkbox"]:not(:checked):hover,
+#write li.task-list-item > input[type="checkbox"]:not(:checked):focus {
+    border-color: var(--buah-accent);
+}
+
+/* Checked state — blind fills top to bottom */
+#write li.task-list-item > input[type="checkbox"]:checked {
+    background-size: 100% 100%;      /* 100% height = fully filled */
+}
+
+/* Checked — hover & focus */
+#write li.task-list-item > input[type="checkbox"]:checked:hover,
+#write li.task-list-item > input[type="checkbox"]:checked:focus {
+    border-color: var(--buah-accent);
+    background-image: linear-gradient(to bottom, var(--buah-accent), var(--buah-accent));
+}
+
+/* Checked text — strikethrough */
+#write li.task-list-item.checked {
+    text-decoration: line-through;
+    text-decoration-color: var(--buah-dim);
+}
+
+/* ==================== */
+/* Footnotes            */
+/* ==================== */
+
+/* Footnote reference — superscript number in text */
+sup.md-footnote {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--buah-accent);
+}
+
+/* Footnote reference — hover & focus */
+sup.md-footnote:hover,
+sup.md-footnote:focus {
+    color: var(--buah-accent);
+    text-shadow: 0 0 8px var(--buah-accent);
+}
+
+/* Separator line — remove it */
+.footnotes hr {
+    display: none;
+}
+
+/* Spacing above footnotes area — 3 lines worth */
+.footnotes {
+    margin-top: 4.5em !important;
+}
+
+/* Footnote content text */
+.footnotes .footnote-line {
+    font-size: 0.85em;
+    color: var(--buah-light);
+}
+
+/* Footnote number in content area — all parts */
+.footnotes span.md-def-name,
+.footnotes span.md-def-name::before,
+.footnotes span.md-def-name::after {
+    color: var(--buah-accent) !important;
+}
+
+/* Hide return arrow */
+.footnotes a.reversefootnote {
+    display: none;
+}
+
+/* ==================== Sidebar / Outline / Tabs ==================== */
+#typora-sidebar,
+#typora-sidebar *,
+.sidebar,
+.sidebar * {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sidebar tabs */
+.sidebar-tabs,
+.sidebar-tabs .tab-bar,
+.sidebar-footer {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-tab,
+.sidebar-tab:hover {
+  color: var(--text-muted);
+}
+
+.sidebar-tab.active,
+.sidebar-tab-active,
+.sidebar-tab.active:hover {
+  color: var(--text);
+  border-bottom: 1px solid var(--buah-bg-4);
+}
+
+
+/* File tree / file list */
+.file-list-item,
+.file-node-content,
+.file-node-title {
+  color: var(--text-muted);
+}
+
+.file-node-content.active,
+.file-node-content.active .file-node-title,
+.file-list-item.active {
+  background: var(--bg-muted);
+  color: var(--text);
+}
+
+
+/* Search box & inputs in sidebar */
+.sidebar input[type="text"],
+#typora-sidebar input[type="text"] {
+  background: var(--bg-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+}
+
+.sidebar input[type="text"]::placeholder {
+  color: var(--text-muted);
+}
+
+
+/* Outline panel */
+.outline-panel,
+.outline-content,
+.outline-title,
+.outline-item,
+.outline-label {
+  background: var(--bg-panel);
+  color: var(--text-muted);
+}
+.outline-title {
+  color: var(--text);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Create the green-center gray-sides underline */
+.outline-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, 
+    var(--border) 0%, 
+    var(--border) 35%, 
+    var(--buah-green) 50%, 
+    var(--border) 65%, 
+    var(--border) 100%
+  );
+}
+
+.outline-item.active,
+.outline-item .active {
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove borders from file nodes in sidebar */
+.file-node-content,
+.file-node-title,
+.file-list-item,
+.file-node-content.active,
+.file-node-content.active .file-node-title,
+.file-list-item.active {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Outline hover effects */
+.file-node-content:hover,
+.file-list-item:hover,
+.outline-item:hover,
+.outline-item-container:hover {
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+/* Override: remove sidebar outline label/item background badges */
+.outline-item,
+.outline-label {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Also remove hover highlight boxes for outline items */
+.outline-item:hover,
+.outline-item-container:hover {
+  background: transparent !important;
+}
+
+/* Remove borders from outline elements */
+.outline-header,
+.outline,
+.outline-panel,
+.outline-title {
+  border-bottom: none !important;
+}
+
+
+#write em strong, #write strong em, #write em b, #write b em {
+  color: var(--buah-light);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Horizontal rule */
+#write hr {
+  border: none;
+  border-top: 1px solid var(--buah-pink);
+  margin: 2rem 0;
+}
+
+/* ==================== Sidebar Anti-Flash System ==================== */
+
+/* Core sidebar styling */
+#typora-sidebar,
+.sidebar {
+  background: var(--bg);
+  color: var(--text);
+  border-right: 1px solid var(--border);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* Megamenu sidebar (preferences / open) */
+.unibody-window #megamenu-menu-sidebar {
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+#megamenu-menu-sidebar .megamenu-menu-list { border: none; }
+
+/* Sidebar tabs & footer */
+.sidebar-tabs, .sidebar-tabs .tab-bar, .sidebar-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+/* Prevent transitions during sidebar operations */
+#typora-sidebar, .sidebar, .sidebar *, .megamenu-menu, .megamenu-content, .megamenu-menu-sidebar, .megamenu-content, .megamenu-menu, .megamenu-menu-list {
+  transition: background-color 0s, color 0s !important;
+}
+
+/* Ensure all sidebar containers maintain consistent background */
+.sidebar-tabs,
+.sidebar-tabs .tab-bar,
+.sidebar-footer,
+.sidebar-content,
+.outline-panel,
+.outline-content,
+.outline-item,
+.outline-item-container,
+#file-library-list,
+#file-library-search-result,
+#file-library-tree,
+.sidebar-resizer {
+  background: var(--bg) !important;
+}
+
+
+/* Callouts icon spacing: increase space between icon/title and content */
+.md-alert > *:first-child {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Blockquote — vertical center alignment fix */
+#write blockquote {
+  display: flex;
+  align-items: center;
+  min-height: 3.0em;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+#write blockquote > p,
+#write blockquote > :not(blockquote) {
+  margin: 0;
+}
+
+/* ==== Export View & Print Background ==== */
+.typora-export,
+.typora-export body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+@media print {
+  body,
+  html,
+  .typora-export {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
+/* Fix CodeMirror line highlighting — active line & selection only */
+#write .CodeMirror-activeline-background,
+#write .CodeMirror-selected {
+  background: var(--bg-soft) !important;
+}
+
+/* Ensure CodeMirror internals never add a second background */
+#write .CodeMirror-scroll,
+#write .CodeMirror-sizer,
+#write .CodeMirror-linebackground {
+  background: transparent !important;
+}
+
+
+/* Fix any white background in code elements */
+#write .CodeMirror,
+#write .CodeMirror-gutters,
+#write .CodeMirror-lines,
+#write .CodeMirror-code,
+#write .CodeMirror-line,
+#write pre.CodeMirror-line,
+#write .CodeMirror-linebackground {
+  background: transparent !important;
+}
+
+/* ==== UI Elements Outside Writing Area ==== */
+/* Fix for settings dialog and other UI components */
+:not(#write *) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Specific fixes for common UI elements */
+.dialog,
+.modal,
+.popup,
+.ty-tooltip,
+#megamenu-content,
+#file-library-search-result,
+.preference-panel,
+.settings-panel,
+input:not(#write *),
+select:not(#write *),
+button:not(#write *),
+label:not(#write *),
+span:not(#write *) {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Only add border to elements that need it */
+.dialog,
+.modal,
+.popup,
+.preference-panel,
+.settings-panel,
+input:not(#write *),
+select:not(#write *),
+button:not(#write *) {
+  border-color: var(--border) !important;
+}
+
+/* Fix for input fields and text areas */
+input[type="text"]:not(#write *),
+input[type="password"]:not(#write *),
+input[type="email"]:not(#write *),
+input[type="number"]:not(#write *),
+textarea:not(#write *),
+select:not(#write *) {
+  background-color: var(--bg-soft) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Fix for buttons */
+button:not(#write *),
+.btn:not(#write *) {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-btn-text-color) !important;
+  border: 1px solid var(--primary-btn-border-color) !important;
+}
+
+/* Fix for file search dialog (Cmd+Shift+O) */
+#file-library-search,
+.search-input,
+.search-result,
+.file-list-item {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Fix for status bar */
+.status-bar,
+.footer-bar {
+  background-color: var(--bg-panel) !important;
+  color: var(--text-color) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+/* ==================== Find / Replace bar ==================== */
+
+/* Outer container */
+#md-searchpanel {
+  background: var(--bg-panel);
+  border: 1px solid var(--buah-pink);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-2);
+  color: var(--text);
+  padding: 0.4rem 0.5rem;
+}
+
+/* Search & replace rows */
+#md-searchpanel .ty-search-panel-row {
+  padding: 3px 2px;
+}
+
+/* The text inputs (search field, replace field) */
+#md-searchpanel input.form-control,
+#md-searchpanel #search-panel-input {
+  background: var(--bg-soft) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--buah-bg-3) !important;
+  border-radius: 6px !important;
+  padding: 0.25rem 0.5rem !important;
+  box-shadow: none !important;
+}
+
+#md-searchpanel input.form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+#md-searchpanel input.form-control:focus {
+  border-color: var(--buah-accent) !important;
+  outline: none !important;
+}
+
+/* "Search" / "Replace" type label on the left */
+#md-search-type-label,
+#md-replace-type-label {
+  background: var(--bg-soft) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--buah-bg-3) !important;
+  border-radius: 6px !important;
+}
+
+/* All buttons in the bar (option toggles, prev/next, close) */
+#md-searchpanel .btn,
+#md-searchpanel button {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#md-searchpanel .btn:hover,
+#md-searchpanel button:hover {
+  background: var(--bg-soft) !important;
+  color: var(--text) !important;
+  border-color: var(--buah-bg-3) !important;
+}
+
+/* Active/toggled state for option buttons (regex, case-sensitive, whole-word) */
+#md-searchpanel .btn.active,
+#md-searchpanel #searchpanel-regexp-option-btn.active,
+#md-searchpanel #searchpanel-case-option-btn.active,
+#md-searchpanel #searchpanel-word-option-btn.active {
+  background: var(--buah-accent) !important;
+  color: var(--buah-dark) !important;
+  border-color: var(--buah-accent) !important;
+}
+
+/* Prev / Next match buttons */
+#md-searchpanel #search-panel-prev,
+#md-searchpanel #search-panel-next {
+  color: var(--text) !important;
+}
+
+/* Match counter / status */
+#md-searchpanel #search-panel-status,
+#md-searchpanel #searchpanel-msg {
+  color: var(--text-muted) !important;
+  font-size: 0.85em;
+}
+
+/* Close button */
+#md-searchpanel .close-btn {
+  color: var(--text-muted) !important;
+}
+
+#md-searchpanel .close-btn:hover {
+  color: var(--buah-accent) !important;
+  background: transparent !important;
+}
+
+/* Highlighted matches in the document */
+#write .md-search-hit {
+  background: var(--buah-pink) !important;
+  color: var(--buah-dark) !important;
+  border-radius: 3px;
+}
+
+#write .md-search-hit.md-search-select-hit,
+#write .md-search-hit-selected {
+  background: var(--buah-accent) !important;
+  color: var(--buah-dark) !important;
+}
