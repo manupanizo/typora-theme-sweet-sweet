@@ -10,7 +10,7 @@ The theme styles every part of Typora's editor — not just the document body, b
 
 ## Screenshots
 
-![Screenshot 2026-05-06 at 6.09.47 PM](/Users/manu/Documents/inbox/Screenshot 2026-05-06 at 6.09.47 PM.png)
+![Sweet Sweet theme preview](screenshots/preview.png)
 
 ## Features
 
