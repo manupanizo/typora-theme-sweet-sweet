@@ -7,6 +7,67 @@
  * Designed and tested on macOS. Not tested, but should work for Windows/Linux. This theme does not include styles for Windows “unibody” style.
  * ----------------------------------------------------------------
 */
+
+/* ===================================================================
+   BUNDLED FONTS
+   =================================================================== */
+
+@font-face {
+  font-family: “Satoshi”;
+  src: url(“sweet-sweet/Satoshi-Regular.woff2”) format(“woff2”);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: “Satoshi”;
+  src: url(“sweet-sweet/Satoshi-Italic.woff2”) format(“woff2”);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: “Satoshi”;
+  src: url(“sweet-sweet/Satoshi-Medium.woff2”) format(“woff2”);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: “Satoshi”;
+  src: url(“sweet-sweet/Satoshi-MediumItalic.woff2”) format(“woff2”);
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: “Satoshi”;
+  src: url(“sweet-sweet/Satoshi-Bold.woff2”) format(“woff2”);
+  font-weight: 600 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: “Satoshi”;
+  src: url(“sweet-sweet/Satoshi-BoldItalic.woff2”) format(“woff2”);
+  font-weight: 600 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: “Young Serif”;
+  src: url(“sweet-sweet/YoungSerif-Regular.woff2”) format(“woff2”);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: “Young Serif”;
+  src: url(“sweet-sweet/YoungSerif-Bold.woff2”) format(“woff2”);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: “mayo”;
+  src: url(“sweet-sweet/MAYO____.woff2”) format(“woff2”);
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   /* ==================== Color Palette ==================== */
   /* Primary colors */
@@ -248,7 +309,7 @@ body,
   margin: 1.2rem 0;
   background: var(--bg-panel);
   box-shadow: var(--shadow-1);
-  border: 1px solid var(--border);
+  border: 1px solid var(--buah-pink);
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -375,6 +436,32 @@ html body #write .md-htmlblock-container:hover .md-rawblock-tooltip.md-rawblock-
 }
 
 
+/* Math blocks (editing view) */
+#write .md-math-block.md-focus .md-rawblock-container {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--buah-pink) !important;
+  border-radius: var(--radius) !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: var(--shadow-1);
+}
+
+#write .md-math-block.md-focus .CodeMirror,
+#write .md-math-block.md-focus .cm-s-inner {
+  background: transparent !important;
+  font-family: var(--font-code) !important;
+  font-size: var(--font-size) !important;
+  color: var(--text) !important;
+}
+
+/* $$ delimiter stripes */
+#write .md-math-block .md-rawblock-control {
+  background: var(--bg-panel) !important;
+  color: var(--text-muted) !important;
+  font-family: var(--font-code) !important;
+  font-size: var(--font-size) !important;
+}
+
+
 /* ==================== CodeMirror — Buah token colors ==================== */
 .cm-s-inner,
 .cm-s-typora-default {
@@ -483,6 +570,14 @@ blockquote > .md-alert,
 .md-alert > .md-alert,
 .md-alert > blockquote {
   margin-bottom: 0;
+}
+
+/* Strip the outer blockquote wrapper that Typora inserts around .md-alert callouts */
+blockquote:has(> .md-alert) {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 p + blockquote,
