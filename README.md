@@ -67,4 +67,4 @@ Apache-2.0. See [LICENSE](LICENSE) for details.
 
 ## Author
 
-[Manu Panizo](manupanizo.com)
+[Manu Panizo](www.manupanizo.com)
